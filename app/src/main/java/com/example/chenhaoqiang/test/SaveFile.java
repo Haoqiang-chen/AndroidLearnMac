@@ -1,5 +1,6 @@
 package com.example.chenhaoqiang.test;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
@@ -13,17 +14,15 @@ public class SaveFile {
     public static final int MEDIA_TYPE_VIDEO = 2;
 
     /** Create a file Uri for saving an image or video */
-    public static Uri getOutputMediaFileUri(int type){
-        return Uri.fromFile(getOutputMediaFile(type));
+    public static Uri getOutputMediaFileUri(int type, Context context){
+        return Uri.fromFile(getOutputMediaFile(type, context));
     }
 
     /** Create a File for saving an image or video */
-    public static File getOutputMediaFile(int type){
-        // To be safe, you should check that the SDCard is mounted
-        // using Environment.getExternalStorageState() before doing this.
+    public static File getOutputMediaFile(int type, Context context){
+        // 保存文件到内部存储
 
-        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES), "MyCameraApp");
+        File mediaStorageDir = new File(context.getFilesDir(), "MyCameraApp");
         // This location works best if you want the created images to be shared
         // between applications and persist after your app has been uninstalled.
 

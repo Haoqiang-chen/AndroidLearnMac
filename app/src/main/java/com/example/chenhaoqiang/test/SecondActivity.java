@@ -67,7 +67,7 @@ public class SecondActivity extends AppCompatActivity {
     private Camera.PictureCallback pictureCallback = new Camera.PictureCallback() {
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
-            File pictureFile = SaveFile.getOutputMediaFile(SaveFile.MEDIA_TYPE_IMAGE);
+            File pictureFile = SaveFile.getOutputMediaFile(SaveFile.MEDIA_TYPE_IMAGE, SecondActivity.this);
             if (pictureFile == null){
                 Log.e("pictureFile", "Error creating media file, check storage permissions: ");
                 return;

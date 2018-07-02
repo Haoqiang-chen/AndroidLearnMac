@@ -5,12 +5,6 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.util.Log;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 
 public class CameraEngine {
     private Camera camera;
@@ -30,15 +24,15 @@ public class CameraEngine {
 
     /** A safe way to get an instance of the Camera object. */
     public Camera getCameraInstance(){
-        Camera c = null;
+        camera = null;
         try {
-            c = Camera.open(); // attempt to get a Camera instance
+            camera = Camera.open(); // attempt to get a Camera instance
             Log.e("camera", "open");
         }
         catch (Exception e){
             // Camera is not available (in use or does not exist)
         }
-        return c; // returns null if camera is unavailable
+        return camera; // returns null if camera is unavailable
     }
 
     public void myTakePicture(Camera.ShutterCallback shutter, Camera.PictureCallback raw, Camera.PictureCallback jpeg){
@@ -46,6 +40,7 @@ public class CameraEngine {
             Log.e("cameraState", "null");
         }
         camera.takePicture(shutter, raw, jpeg);
+        camera.startPreview();
     }
 
     public  void releaseCamera(){
