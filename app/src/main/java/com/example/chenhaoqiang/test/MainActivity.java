@@ -11,10 +11,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSecond,btnThird;
+    private Button btnSecond,btnThird, btnRecyclerView;
+    private TextView txtShow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         requestAllPremission();
         btnThird = findViewById(R.id.button_third);
         btnThird.setOnClickListener(toThird);
+        btnRecyclerView = findViewById(R.id.button_recyclerview);
+        btnRecyclerView.setOnClickListener(toSecyclerView);
+        txtShow = findViewById(R.id.show);
+        txtShow.setText("@ ·");
 
     }
     private View.OnClickListener toSecond = new View.OnClickListener() {
@@ -41,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, ThirdActivity.class);
+            startActivity(i);
+        }
+    };
+    private View.OnClickListener toSecyclerView = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, RecyclerActivity.class);
             startActivity(i);
         }
     };
