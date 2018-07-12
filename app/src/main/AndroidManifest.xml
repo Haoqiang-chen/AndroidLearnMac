@@ -29,7 +29,8 @@
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".recyclerview.RecyclerActivity"></activity>
+        <activity android:name=".recyclerview.RecyclerActivity" />
+        <activity android:name=".eventbus.EventBusActivity"></activity>
     </application>
 
 </manifest>

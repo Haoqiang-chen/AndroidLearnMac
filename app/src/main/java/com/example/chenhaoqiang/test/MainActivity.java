@@ -13,11 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.chenhaoqiang.test.eventbus.EventBusActivity;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSecond,btnThird, btnRecyclerView;
+    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus;
     private TextView txtShow;
 
     @Override
@@ -34,8 +35,16 @@ public class MainActivity extends AppCompatActivity {
         btnRecyclerView.setOnClickListener(toSecyclerView);
         txtShow = findViewById(R.id.show);
         txtShow.setText("@ ·");
+        btnEventBus = findViewById(R.id.button_eventbus);
+        btnEventBus.setOnClickListener(toEventBus);
 
     }
+    private View.OnClickListener toEventBus = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            EventBusActivity.lanuch(this);
+        }
+    };
     private View.OnClickListener toSecond = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
