@@ -14,7 +14,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.chenhaoqiang.test.eventbus.EventBusActivity;
+import com.example.chenhaoqiang.test.eventbus.MessageEvent;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,12 +40,13 @@ public class MainActivity extends AppCompatActivity {
         txtShow.setText("@ ·");
         btnEventBus = findViewById(R.id.button_eventbus);
         btnEventBus.setOnClickListener(toEventBus);
+        EventBus.getDefault().postSticky(new MessageEvent("StickyEvent"));
 
     }
     private View.OnClickListener toEventBus = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            EventBusActivity.lanuch(this);
+            EventBusActivity.lanuch(MainActivity.this);
         }
     };
     private View.OnClickListener toSecond = new View.OnClickListener() {
