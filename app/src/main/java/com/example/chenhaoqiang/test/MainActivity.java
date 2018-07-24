@@ -15,9 +15,14 @@ import android.widget.TextView;
 
 import com.example.chenhaoqiang.test.eventbus.EventBusActivity;
 import com.example.chenhaoqiang.test.eventbus.MessageEvent;
+import com.example.chenhaoqiang.test.json.CreatJson;
+import com.example.chenhaoqiang.test.json.GsonTest;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
+import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
+
+import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +46,27 @@ public class MainActivity extends AppCompatActivity {
         btnEventBus = findViewById(R.id.button_eventbus);
         btnEventBus.setOnClickListener(toEventBus);
         EventBus.getDefault().postSticky(new MessageEvent("StickyEvent"));
+        /*JSON Test*/
+        CreatJson creatJson = new CreatJson();
+        /*GSON 学习*/
+        GsonTest gsonTest = new GsonTest();
+
+        /*测试类型转换*/
+        long x = 10280000;
+        long y = 10250000;
+        double z = (x -y)/ 500000;
+        int c = 100;
+        int s = (int)(z * c);
+
+        BigDecimal xx = new BigDecimal(Long.toString(x));
+        BigDecimal yy = new BigDecimal(Long.toString(y));
+        BigDecimal zz = xx.subtract(yy);
+        BigDecimal i = new BigDecimal(Long.toString(500000));
+        BigDecimal zzz = zz.divide(i);
+        BigDecimal cc = new BigDecimal(Integer.toString(c));
+        BigDecimal ss = zzz.multiply(cc);
+        int sum = ss.intValue();
+
 
     }
     private View.OnClickListener toEventBus = new View.OnClickListener() {
