@@ -18,6 +18,7 @@ import com.example.chenhaoqiang.test.eventbus.MessageEvent;
 import com.example.chenhaoqiang.test.json.CreatJson;
 import com.example.chenhaoqiang.test.json.GsonTest;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
+import com.example.chenhaoqiang.test.retrofit.RequestRetrofit;
 import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         /*GSON 学习*/
         GsonTest gsonTest = new GsonTest();
 
-        /*测试类型转换*/
+        /*测试类型转换，在计算小数时可以使用BigDecimal或者在被除数上乘以1f来处理*/
         long x = 10280000;
         long y = 10250000;
         double z = (x -y)/ 500000;
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         BigDecimal cc = new BigDecimal(Integer.toString(c));
         BigDecimal ss = zzz.multiply(cc);
         int sum = ss.intValue();
+
+        /*测试Retrofit网络请求*/
+        RequestRetrofit requestRetrofit = new RequestRetrofit(this);
 
 
     }
