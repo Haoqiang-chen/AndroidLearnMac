@@ -11,6 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
+ * http://square.github.io/retrofit/
  * 使用Retrofit对象进行网络请求
  * 首先创建retrofit的实例并设置数据解析器的类型
  * 然后创建网络请求接口的实例并进行异步的网络请求
