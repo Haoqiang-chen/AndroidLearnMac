@@ -19,6 +19,7 @@ import com.example.chenhaoqiang.test.json.CreatJson;
 import com.example.chenhaoqiang.test.json.GsonTest;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 import com.example.chenhaoqiang.test.retrofit.RequestRetrofit;
+import com.example.chenhaoqiang.test.viewpager.ViewPagerActivity;
 import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
@@ -27,7 +28,7 @@ import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus;
+    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager;
     private TextView txtShow;
 
     @Override
@@ -71,8 +72,22 @@ public class MainActivity extends AppCompatActivity {
         /*测试Retrofit网络请求*/
         RequestRetrofit requestRetrofit = new RequestRetrofit(this);
 
+        /**
+         * 测试ViewPager
+         */
+        btnViewPager = findViewById(R.id.button_viewpager);
+        btnViewPager.setOnClickListener(toViewPager);
 
     }
+
+    private View.OnClickListener toViewPager = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, ViewPagerActivity.class);
+            startActivity(i);
+        }
+    };
     private View.OnClickListener toEventBus = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

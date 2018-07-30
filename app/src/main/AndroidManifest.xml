@@ -12,8 +12,8 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- SD卡写权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--网络权限-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -32,7 +32,8 @@
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".recyclerview.RecyclerActivity" />
-        <activity android:name=".eventbus.EventBusActivity"></activity>
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".viewpager.ViewPagerActivity"></activity>
     </application>
 
 </manifest>
