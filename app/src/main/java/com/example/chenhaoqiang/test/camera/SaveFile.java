@@ -1,4 +1,4 @@
-package com.example.chenhaoqiang.test;
+package com.example.chenhaoqiang.test.camera;
 
 import android.content.Context;
 import android.net.Uri;

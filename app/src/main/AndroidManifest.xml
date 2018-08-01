@@ -29,8 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".ThirdActivity" />
+        <activity android:name=".camera.SecondActivity" />
+        <activity android:name=".fragment.ThirdActivity" />
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".eventbus.EventBusActivity" />
         <activity android:name=".viewpager.ViewPagerActivity"></activity>

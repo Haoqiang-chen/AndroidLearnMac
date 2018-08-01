@@ -1,4 +1,4 @@
-package com.example.chenhaoqiang.test;
+package com.example.chenhaoqiang.test.fragment;
 
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.chenhaoqiang.test.R;
 import com.example.chenhaoqiang.test.fragment.FirestFragment;
 
 public class ThirdActivity extends AppCompatActivity implements FirestFragment.OnFragmentInteractionListener{

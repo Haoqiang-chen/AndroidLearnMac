@@ -1,4 +1,4 @@
-package com.example.chenhaoqiang.test;
+package com.example.chenhaoqiang.test.camera;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -12,12 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.example.chenhaoqiang.test.R;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 
 public class SecondActivity extends AppCompatActivity {
 

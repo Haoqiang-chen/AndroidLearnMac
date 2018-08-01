@@ -3,7 +3,6 @@ package com.example.chenhaoqiang.test;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.hardware.Camera;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -13,14 +12,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.chenhaoqiang.test.camera.SecondActivity;
 import com.example.chenhaoqiang.test.eventbus.EventBusActivity;
 import com.example.chenhaoqiang.test.eventbus.MessageEvent;
+import com.example.chenhaoqiang.test.fragment.ThirdActivity;
 import com.example.chenhaoqiang.test.json.CreatJson;
 import com.example.chenhaoqiang.test.json.GsonTest;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 import com.example.chenhaoqiang.test.retrofit.RequestRetrofit;
 import com.example.chenhaoqiang.test.viewpager.ViewPagerActivity;
-import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
 
