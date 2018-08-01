@@ -8,7 +8,10 @@ import com.example.chenhaoqiang.test.R;
 
 /**
  * 用于在ViewPager中显示Page
- *
+ * ViewPager总结：
+ *    ViewPager的作用：可以实现屏幕幻灯片动画
+ *    ViewPager的使用方法：首先在布局文件中可以使用通过继承自定义的ViewPager，或者直接使用基类ViewPager
+ *                       然后需要为ViewPager提供适配器即PagerAdapter，PagerAdapter适配器用于提供填充Page的View，一般使用Fragment来作为Page的View
  * @author chenhaoqiang
  * @date 2018/7/30
  */
@@ -24,10 +27,11 @@ public class ViewPagerActivity extends AppCompatActivity {
         //设置ViewPager的适配器
         MyVpAdapter myVpAdapter = new MyVpAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myVpAdapter);
+
     }
 
     /**
-     * 设置返回按钮的功能
+     * 重写返回按钮的功能
      */
     @Override
     public void onBackPressed() {
