@@ -11,7 +11,8 @@ import com.example.chenhaoqiang.test.R;
 import java.util.List;
 
 /**
- * 适配器：RecyclerView.Adapter的子类，负责提供表示数据集中项目的视图。
+ * 适配器：RecyclerView.Adapter的子类，负责提供表示数据集中项目的视图
+ * 用于 数据 与 Item进行绑定
  *
  * @author chenhaoqiang
  * @date 2018/7/11

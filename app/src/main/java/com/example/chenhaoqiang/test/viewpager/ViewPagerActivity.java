@@ -3,6 +3,8 @@ package com.example.chenhaoqiang.test.viewpager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.chenhaoqiang.test.R;
 
@@ -17,19 +19,59 @@ import com.example.chenhaoqiang.test.R;
  */
 public class ViewPagerActivity extends AppCompatActivity {
 
+    private static final int CHAT = 0;
+    private static final int CONTACTS = 1;
+    private static final int FIND = 2;
+    private static final int MINE = 3;
+
     private ViewPager viewPager;
+    private ImageView imgChat, imgContacts, imgFind, imgMine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager);
-        viewPager = findViewById(R.id.viewpager);
+        initView();
+        initListener();
         //设置ViewPager的适配器
         MyVpAdapter myVpAdapter = new MyVpAdapter(getSupportFragmentManager());
         viewPager.setAdapter(myVpAdapter);
 
     }
 
+    private void initView(){
+        viewPager = findViewById(R.id.viewpager);
+        imgChat = findViewById(R.id.img_chat);
+        imgContacts = findViewById(R.id.img_contacts);
+        imgFind = findViewById(R.id.img_find);
+        imgMine = findViewById(R.id.img_mine);
+    }
+
+    private void initListener(){
+        imgChat.setOnClickListener(show);
+        imgContacts.setOnClickListener(show);
+        imgFind.setOnClickListener(show);
+        imgMine.setOnClickListener(show);
+
+    }
+
+    View.OnClickListener show = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (v == imgChat){
+                viewPager.setCurrentItem(CHAT);
+            }
+            if (v == imgContacts){
+                viewPager.setCurrentItem(CONTACTS);
+            }
+            if (v == imgFind){
+                viewPager.setCurrentItem(FIND);
+            }
+            if (v == imgMine){
+                viewPager.setCurrentItem(MINE);
+            }
+        }
+    };
     /**
      * 重写返回按钮的功能
      */
