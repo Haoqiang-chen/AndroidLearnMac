@@ -1,5 +1,7 @@
 package com.example.chenhaoqiang.test.viewpager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +28,10 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private ImageView imgChat, imgContacts, imgFind, imgMine;
+    public static void launch(Context context){
+        Intent i = new Intent(context, ViewPagerActivity.class);
+        context.startActivity(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

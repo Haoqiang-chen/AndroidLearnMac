@@ -3,6 +3,7 @@ package com.example.chenhaoqiang.test;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import com.example.chenhaoqiang.test.json.CreatJson;
 import com.example.chenhaoqiang.test.json.GsonTest;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 import com.example.chenhaoqiang.test.retrofit.RequestRetrofit;
+import com.example.chenhaoqiang.test.schema.SchemaHelper;
 import com.example.chenhaoqiang.test.viewpager.ViewPagerActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -28,7 +30,7 @@ import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager;
+    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager, btnScheme;
     private TextView txtShow;
 
     @Override
@@ -78,7 +80,23 @@ public class MainActivity extends AppCompatActivity {
         btnViewPager = findViewById(R.id.button_viewpager);
         btnViewPager.setOnClickListener(toViewPager);
 
+        /**
+         * scheme learn
+         */
+        btnScheme = findViewById(R.id.button_scheme);
+        btnScheme.setOnClickListener(scheme);
+
     }
+
+    private View.OnClickListener scheme = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            SchemaHelper schemaHelper = new SchemaHelper(MainActivity.this);
+            String s = "aiknow://viewpager";
+            Uri uri = Uri.parse(s);
+            schemaHelper.doJump(uri);
+        }
+    };
 
     private View.OnClickListener toViewPager = new View.OnClickListener() {
         @Override
