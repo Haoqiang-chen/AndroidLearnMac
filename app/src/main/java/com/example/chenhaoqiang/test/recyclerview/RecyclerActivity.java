@@ -31,6 +31,7 @@ public class RecyclerActivity extends AppCompatActivity implements RecyclerViewI
 
         /*在使用Recyclerview时需要设置布局管理器：分为线性、网格、瀑布管理器*/
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        //linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         /*网格布局，无分割线*/
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
         /*瀑布布局可以实现网格布局的样式*/
@@ -41,7 +42,7 @@ public class RecyclerActivity extends AppCompatActivity implements RecyclerViewI
         dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
         initDatabase();
-        myAdapter = new MyAdapter(database);
+        myAdapter = new MyAdapter(this, database);
         /*RecyclerView需要自己实现监听接口*/
         myAdapter.setRecyclerViewItemClickCallBack(this);
         recyclerView.setAdapter(myAdapter);

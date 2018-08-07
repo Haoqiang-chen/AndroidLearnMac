@@ -1,18 +1,26 @@
 package com.example.chenhaoqiang.test.recyclerview;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.chenhaoqiang.test.R;
+import com.example.chenhaoqiang.test.glide.GlideApp;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 适配器：RecyclerView.Adapter的子类，负责提供表示数据集中项目的视图
  * 用于 数据 与 Item进行绑定
+ * <p>
+ * 使用Glide来加载图片
  *
  * @author chenhaoqiang
  * @date 2018/7/11
@@ -20,9 +28,13 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     private List<String> database;
     private RecyclerViewItemClickCallBack recyclerViewItemClickCallBack;
+    private Context context;
+    private List<String> imgDataBase = new ArrayList<>();
 
-    public MyAdapter(List<String> database) {
+    public MyAdapter(Context context, List<String> database) {
         this.database = database;
+        this.context = context;
+        setImgDataBase();
     }
 
     /*在RecyclerView需要一个新的被给定类型的ViewHolder来显示Item的时候调用*/
@@ -44,6 +56,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     /*在RecyclerView在特定位置显示数据的时候调用*/
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, final int position) {
+        setTextView(holder, position);
+        setImg(holder, position);
+
+    }
+
+    //设置图片数据集
+    private void setImgDataBase() {
+        imgDataBase.add("http://pic.58pic.com/58pic/16/58/21/30w58PICbzC_1024.jpg");
+        imgDataBase.add("http://pic.58pic.com/58pic/11/95/59/35T58PICMaJ.jpg");
+        imgDataBase.add("http://img5.duitang.com/uploads/item/201411/24/20141124175322_JEfAF.gif");
+    }
+
+    //使用Glide从Url中加载图片到ImageView山
+    private void setImg(MyHolder holder, int position) {
+        String url;
+        if (position < imgDataBase.size()) {
+            url = imgDataBase.get(position);
+        } else {
+            url = "http://pic.58pic.com/58pic/16/58/21/30w58PICbzC_1024.jpg";
+        }
+        GlideApp.with(context)
+                .load(url)
+                .placeholder(R.drawable.bg)
+                .centerCrop()
+                .transition(withCrossFade())
+                .into(holder.getImageView());
+    }
+
+    //设置Item中TextView中内容和监听
+    private void setTextView(MyHolder holder, final int position) {
         holder.getShowText().setText(database.get(position));
         holder.getShowText().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +107,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     public int getItemCount() {
         return database.size();
     }
+
 
     /*RecyclerView中有一些列的item位置变化方法。此处以删除为例*/
     public void deleteItem(int position) {
