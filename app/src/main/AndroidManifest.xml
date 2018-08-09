@@ -33,7 +33,8 @@
         <activity android:name=".fragment.ThirdActivity" />
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".eventbus.EventBusActivity" />
-        <activity android:name=".viewpager.ViewPagerActivity"></activity>
+        <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".layout.LayoutLearnActivity"></activity>
     </application>
 
 </manifest>

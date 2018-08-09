@@ -19,6 +19,7 @@ import com.example.chenhaoqiang.test.eventbus.MessageEvent;
 import com.example.chenhaoqiang.test.fragment.ThirdActivity;
 import com.example.chenhaoqiang.test.json.CreatJson;
 import com.example.chenhaoqiang.test.json.GsonTest;
+import com.example.chenhaoqiang.test.layout.LayoutLearnActivity;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 import com.example.chenhaoqiang.test.retrofit.RequestRetrofit;
 import com.example.chenhaoqiang.test.schema.SchemaHelper;
@@ -30,7 +31,7 @@ import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager, btnScheme;
+    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager, btnScheme, btnLayout;
     private TextView txtShow;
 
     @Override
@@ -86,6 +87,15 @@ public class MainActivity extends AppCompatActivity {
         btnScheme = findViewById(R.id.button_scheme);
         btnScheme.setOnClickListener(scheme);
 
+        /**
+         * layoutLearn
+         */
+        btnLayout = findViewById(R.id.button_layout);
+        btnLayout.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, LayoutLearnActivity.class);
+            startActivity(intent);
+        });
     }
 
     private View.OnClickListener scheme = new View.OnClickListener() {
