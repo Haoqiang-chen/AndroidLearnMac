@@ -34,7 +34,8 @@
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".eventbus.EventBusActivity" />
         <activity android:name=".viewpager.ViewPagerActivity" />
-        <activity android:name=".layout.LayoutLearnActivity"></activity>
+        <activity android:name=".layout.LayoutLearnActivity" />
+        <activity android:name=".view.CanvasActivity"></activity>
     </application>
 
 </manifest>

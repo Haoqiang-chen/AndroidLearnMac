@@ -23,6 +23,7 @@ import com.example.chenhaoqiang.test.layout.LayoutLearnActivity;
 import com.example.chenhaoqiang.test.recyclerview.RecyclerActivity;
 import com.example.chenhaoqiang.test.retrofit.RequestRetrofit;
 import com.example.chenhaoqiang.test.schema.SchemaHelper;
+import com.example.chenhaoqiang.test.view.CanvasActivity;
 import com.example.chenhaoqiang.test.viewpager.ViewPagerActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -31,7 +32,7 @@ import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager, btnScheme, btnLayout;
+    private Button btnSecond,btnThird, btnRecyclerView, btnEventBus, btnViewPager, btnScheme, btnLayout, btnView;
     private TextView txtShow;
 
     @Override
@@ -94,6 +95,16 @@ public class MainActivity extends AppCompatActivity {
         btnLayout.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, LayoutLearnActivity.class);
+            startActivity(intent);
+        });
+
+        /**
+         * view
+         */
+        btnView = findViewById(R.id.button_view);
+        btnView.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, CanvasActivity.class);
             startActivity(intent);
         });
     }
