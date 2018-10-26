@@ -16,11 +16,20 @@ class MyView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-//        var paint = Paint()
-//        paint.style = Paint.Style.FILL
-//        paint.color = Color.BLUE
-//        canvas?.drawRect(0f, 0f, 250f, 250f, paint)
-        canvas?.drawPicture(picture)
+        canvas?.let {
+            var paint = Paint()
+            paint.style = Paint.Style.STROKE
+            paint.color = Color.BLUE
+            canvas.drawRect(0f, 0f, 250f, 250f, paint)
+//        canvas?.drawPicture(picture)
+            // draw ARC
+            val rectF = RectF(0f, 0f, 500f, 500f)
+            canvas.drawRect(rectF, paint)
+            val arcPaint = Paint()
+            arcPaint.color = Color.RED
+            arcPaint.style = Paint.Style.FILL
+            canvas.drawArc(rectF, 160f, 40f, false, arcPaint)
+        }
     }
 
     private fun recording() {

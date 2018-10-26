@@ -6,10 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".view.CanvasActivity">
 
-    <com.example.chenhaoqiang.test.view.MyView
-        android:id="@+id/myView"
+    <com.example.chenhaoqiang.test.view.MyTextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="Value for break strategy indicating high quality line breaking, including automatic hyphenation and doing whole-paragraph optimization of line breaks."/>
 
+    <TextView
+        android:id="@+id/testView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="Value for break strategy indicating high quality line breaking, including automatic hyphenation and doing whole-paragraph optimization of line breaks."/>
+        />
 </android.support.constraint.ConstraintLayout>
