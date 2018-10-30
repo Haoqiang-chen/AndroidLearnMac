@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="EllipsizedTextView">
-        <attr name="ellipsis" format="string" />
-        <attr name="ellipsisColor" format="color" />
+    <declare-styleable name="MyTextView">
+        <attr name="ellipsis" format="string" />/>
     </declare-styleable>
 </resources>

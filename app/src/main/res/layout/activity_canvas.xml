@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:maxLines="2"
         android:ellipsize="end"
-        android:text="Value for break strategy indicating high quality line breaking, including automatic hyphenation and doing whole-paragraph optimization of line breaks."/>
+        app:ellipsis="...全部"
+        android:text="落日下的嗜血1落日下的嗜血2落日下的嗜血3落日下的嗜血4落日下的嗜血5落日下的嗜血6落日下的嗜血7落日下的嗜血8落日下的嗜血9落日下的嗜血10落日下的嗜血11"/>
 
     <TextView
         android:id="@+id/testView"
@@ -20,6 +21,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:maxLines="2"
         android:ellipsize="end"
-        android:text="Value for break strategy indicating high quality line breaking, including automatic hyphenation and doing whole-paragraph optimization of line breaks."/>
+        android:text="落日下的嗜血1落日下的嗜血2落日下的嗜血3落日下的嗜血4落日下的嗜血5落日下的嗜血6落日下的嗜血7落日下的嗜血8落日下的嗜血9落日下的嗜血10落日下的嗜血11"/>
         />
 </android.support.constraint.ConstraintLayout>

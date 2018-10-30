@@ -11,9 +11,11 @@ import android.widget.TextView
 
 class CanvasActivity : AppCompatActivity() {
 
+    private var text = MyTextView()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_canvas)
+
     }
 
 
